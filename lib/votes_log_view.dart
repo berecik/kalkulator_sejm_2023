@@ -9,8 +9,10 @@ class VotesLogView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<VoteWidget> votesWidgets =
-        votes.map((vote) => VoteWidget(vote: vote)).toList();
+    List<VoteWidget> votesWidgets = [];
+    for(int i = 0; i < votes.length; i++) {
+      votesWidgets.add(VoteWidget(vote: votes[i], index: i));
+    }
     return Column(
       children: votesWidgets,
     );

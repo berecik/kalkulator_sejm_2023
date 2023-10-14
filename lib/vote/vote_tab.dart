@@ -1,10 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kalkulator_sejm_2023/widgets/fail_reason_button.dart';
 import '../lists/lists_controller.dart';
 import '/vote/vote_controller.dart';
 import '../widgets/number_input.dart';
 import 'vote_model.dart';
+import 'package:slider_button/slider_button.dart';
 
 class VoteTab extends StatefulWidget {
   const VoteTab({Key? key, required this.checkList}) : super(key: key);
@@ -62,9 +64,10 @@ class _VoteTabState extends State<VoteTab> {
       if (kDebugMode) {
         print("Głos ważny $_list $_candidate");
       }
+      VoteCorrect vote = VoteCorrect(listNumber: _list!, candidateNumber: _candidate!);
+      Get.snackbar("Głos ważny", vote.toString());
       widget.checkList(_list!);
-      controller.addVote(
-          VoteCorrect(listNumber: _list!, candidateNumber: _candidate!));
+      controller.addVote(vote);
       setState(() {
         _list = null;
         _candidate = null;
@@ -79,8 +82,9 @@ class _VoteTabState extends State<VoteTab> {
       if (kDebugMode) {
         print("Głos nieważny ${VoteFail.reasons[reason]}");
       }
-
-      controller.addVote(VoteFail(reason: reason));
+      VoteFail vote = VoteFail(reason: reason);
+      Get.snackbar("Głos nieważny", vote.toString());
+      controller.addVote(vote);
     };
   }
 
@@ -92,12 +96,39 @@ class _VoteTabState extends State<VoteTab> {
       const Text("Aby podliczy głos nieważny, wybierz powód nieważności:"),
     ];
     for (var i = 0; i < VoteFail.reasons.length; i++) {
-      failButtons.add(Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ElevatedButton(
-            onPressed: _voteFail(controller, i),
-            child: Text(VoteFail.reasons[i])),
-      ));
+      failButtons.add(
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child:FailReasonButton(
+            label: VoteFail.reasons[i],
+            action: _voteFail(controller, i),
+          ),
+          // SliderButton(
+          //   width: double.maxFinite,
+          //   action: _voteFail(controller, i),
+          //   // dismissible: false,
+          //   label: Text(
+          //     VoteFail.reasons[i],
+          //     style: const TextStyle(
+          //         color: Color(0xff4a4a4a),
+          //         fontWeight: FontWeight.w500,
+          //         fontSize: 17),
+          //   ),
+          //   icon: const Text(
+          //     "x",
+          //     style: TextStyle(
+          //       color: Colors.white,
+          //       fontWeight: FontWeight.w400,
+          //       fontSize: 44,
+          //     ),
+          //   ),
+          // ),
+          //   ElevatedButton(
+          //       onPressed: _voteFail(controller, i),
+          //       child: Text(VoteFail.reasons[i])),
+          // ),
+        ),
+      );
     }
 
     return Column(
