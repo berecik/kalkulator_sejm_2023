@@ -1,12 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../lists/lists_controller.dart';
 import '/vote/vote_controller.dart';
 import '../widgets/number_input.dart';
 import 'vote_model.dart';
 
 class VoteTab extends StatefulWidget {
-  const VoteTab({Key? key}) : super(key: key);
+  const VoteTab({Key? key, required this.checkList}) : super(key: key);
+
+  final Function checkList;
 
   @override
   State<VoteTab> createState() => _VoteTabState();
@@ -59,6 +62,7 @@ class _VoteTabState extends State<VoteTab> {
       if (kDebugMode) {
         print("Głos ważny $_list $_candidate");
       }
+      widget.checkList(_list!);
       controller.addVote(
           VoteCorrect(listNumber: _list!, candidateNumber: _candidate!));
       setState(() {
