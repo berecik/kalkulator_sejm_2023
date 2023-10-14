@@ -2,15 +2,13 @@
 
 Kalkulator dla komisji wyborczych w wyborach do sejmu 2023.
 
-## Getting Started
+## Informacji ogólne
 
-This project is a starting point for a Flutter application.
+Wersja na androida będzie tu: https://play.google.com/store/apps/details?id=app.marysia.kalkulator_sejm_2023
+Link do wersji na iOS będzie po weryfikacji. 
+Jeżeli tu jest ktoś związany z wyborami i może podać dalej. Uwaga, aplikacjia nie pobiera żadnych danych, nie wysyła, nie zapisuje też niczgo, wyłacznie liczy. zalecam aby aplikację używać na urządzeniu przełączonym w tryb samolotowy, dla bezpieczeństwa wrażliwych danych.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Jak to działa
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Aplikacja zlicza wprowadzane dane i wyświetla wyniki. Zlicza sumę głosów nieważnych, z podziałem na przyczyny nieważności. Zlicza też głosy ważne, z podziałem na listy i kandydatów.

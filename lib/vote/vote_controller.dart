@@ -4,7 +4,7 @@ import 'vote_model.dart';
 
 class VoteController extends GetxController {
   final List<Vote> _votes = [];
-  List<Vote> get votes => _votes;
+  List<Vote> get votes => _votes.where((vote) => vote.active).toList();
 
   void addVote(Vote vote){
     _votes.add(vote);
@@ -15,11 +15,11 @@ class VoteController extends GetxController {
   }
 
   List<VoteFail>? get votesFails {
-    return _votes.whereType<VoteFail>().toList();
+    return votes.whereType<VoteFail>().toList();
   }
 
   List<VoteCorrect>? get votesCorrect {
-    return _votes.whereType<VoteCorrect>().toList();
+    return votes.whereType<VoteCorrect>().toList();
   }
 
   List<VoteCorrect>? votesLists(int listNumber) {

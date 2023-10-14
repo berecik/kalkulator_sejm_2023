@@ -1,4 +1,4 @@
-package com.example.kalkulator_sejm_2023
+package app.marysia.kalkulator_sejm_2023
 
 import io.flutter.embedding.android.FlutterActivity
 

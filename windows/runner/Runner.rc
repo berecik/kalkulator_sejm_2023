@@ -52,7 +52,13 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_APP_ICON            ICON                    "resources\\app_icon.ico"
+IDI_APP_ICON              ICON                    "resources//app_icon.ico"
+IDI_APP_ICON_32              ICON                    "resources//app_icon_32.ico"
+IDI_APP_ICON_64              ICON                    "resources//app_icon_64.ico"
+IDI_APP_ICON_128              ICON                    "resources//app_icon_128.ico"
+IDI_APP_ICON_256              ICON                    "resources//app_icon_256.ico"
+IDI_APP_ICON_512              ICON                    "resources//app_icon_512.ico"
+IDI_APP_ICON_1024              ICON                    "resources//app_icon_1024.ico"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -89,11 +95,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "app.marysia" "\0"
             VALUE "FileDescription", "kalkulator_sejm_2023" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "kalkulator_sejm_2023" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 app.marysia. All rights reserved." "\0"
             VALUE "OriginalFilename", "kalkulator_sejm_2023.exe" "\0"
             VALUE "ProductName", "kalkulator_sejm_2023" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

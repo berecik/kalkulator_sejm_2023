@@ -8,7 +8,7 @@
 PRODUCT_NAME = kalkulator_sejm_2023
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.kalkulatorSejm2023
+PRODUCT_BUNDLE_IDENTIFIER = app.marysia.kalkulatorSejm2023
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 app.marysia. All rights reserved.
