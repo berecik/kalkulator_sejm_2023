@@ -64,7 +64,8 @@ class _VoteTabState extends State<VoteTab> {
       if (kDebugMode) {
         print("Głos ważny $_list $_candidate");
       }
-      VoteCorrect vote = VoteCorrect(listNumber: _list!, candidateNumber: _candidate!);
+      VoteCorrect vote =
+          VoteCorrect(listNumber: _list!, candidateNumber: _candidate!);
       Get.snackbar("Głos ważny", vote.toString());
       widget.checkList(_list!);
       controller.addVote(vote);
@@ -98,8 +99,8 @@ class _VoteTabState extends State<VoteTab> {
     for (var i = 0; i < VoteFail.reasons.length; i++) {
       failButtons.add(
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child:FailReasonButton(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: FailReasonButton(
             label: VoteFail.reasons[i],
             action: _voteFail(controller, i),
           ),
@@ -134,7 +135,7 @@ class _VoteTabState extends State<VoteTab> {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.all(20),
+          // margin: const EdgeInsets.all(20),
           width: double.maxFinite,
           decoration: BoxDecoration(
             color: Colors.lightGreenAccent,
@@ -168,8 +169,11 @@ class _VoteTabState extends State<VoteTab> {
             ],
           ),
         ),
+        const SizedBox(
+          height: 20,
+        ),
         Container(
-          margin: const EdgeInsets.all(20),
+          // margin: const EdgeInsets.all(20),
           width: double.maxFinite,
           decoration: BoxDecoration(
             color: Colors.redAccent,
